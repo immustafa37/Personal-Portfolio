@@ -5,3 +5,57 @@ body {
     background-color: #f4f4f4;
     color: #333;
 }
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #222;
+    color: white;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Sections */
+.section {
+    padding: 50px;
+    text-align: center;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #ff6600;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #e55b00;
+}
+
+/* Skills */
+.skills-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.skill {
+    background-color: #ddd;
+    padding: 10px;
+    border-radius: 5px;
+}
