@@ -84,6 +84,38 @@ nav {
         height: 40px; /* Slightly smaller for mobile */
     }
 }
+/* Dark Mode */
+.dark-mode {
+    background-color: #222;
+    color: white;
+}
+
+.dark-mode nav {
+    background-color: #333;
+}
+
+.dark-mode .project-card {
+    background: #444;
+    color: white;
+}
+
+.dark-mode .btn {
+    background-color: #ff8800;
+}
+
+.dark-mode .btn:hover {
+    background-color: #cc7000;
+}
+
+.dark-mode form input, .dark-mode form textarea {
+    background-color: #555;
+    color: white;
+    border: 1px solid #777;
+}
+
+.dark-mode footer {
+    background-color: #333;
+}
 
 /* Sections */
 .section {
