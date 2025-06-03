@@ -1,3 +1,22 @@
+// Mobile Menu Toggle
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("nav-links");
+const body = document.body;
+
+hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    hamburger.classList.toggle("active");
+    body.classList.toggle("menu-open");
+});
+
+// Close menu when clicking a nav link
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        hamburger.classList.remove("active");
+        body.classList.remove("menu-open");
+    });
+});
 // Theme Toggle Functionality
 const themeToggle = document.getElementById("theme-toggle");
 themeToggle.addEventListener("click", () => {
