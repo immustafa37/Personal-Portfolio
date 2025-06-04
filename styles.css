@@ -1,159 +1,4 @@
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-    nav {
-        position: relative;
-        padding: 15px;
-    }
-    
-    .logo {
-        margin-right: auto;
-    }
-    
-    .nav-links li {
-        margin: 10px 0;
-    }
-}
-@media screen and (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .nav-links {
-        flex-direction: column;
-        gap: 10px;
-        padding: 10px 0;
-    }
-
-    .skills-container {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .project-card {
-        width: 90%;
-        max-width: none;
-    }
-
-    form input, form textarea {
-        width: 90%;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    h1 {
-        font-size: 24px;
-    }
-
-    .btn {
-        padding: 8px 15px;
-    }
-
-    .skills-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .project-card {
-        padding: 15px;
-    }
-}
-/* Mobile Navigation */
-@media screen and (max-width: 768px) {
-    .hamburger {
-        display: block;
-        order: 1;
-    }
-    
-    .nav-links {
-        position: fixed;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100vh; /* Full viewport height */
-        background-color: #222;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 20px 0;
-        transition: 0.3s;
-        z-index: 1000;
-        overflow-y: auto; /* Enable scrolling if menu is too tall */
-    }
-    
-    .nav-links.active {
-        left: 0;
-    }
-    
-    /* Prevent body scrolling when menu is open */
-    body.menu-open {
-        overflow: hidden;
-    }
-    
-    #theme-toggle {
-        order: 2;
-        margin-left: auto;
-    }
-    
-    .logo {
-        order: 3;
-    }
-}
-/* Hamburger Menu */
-.hamburger {
-    display: none;
-    cursor: pointer;
-}
-
-.hamburger .bar {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 5px 0;
-    transition: 0.4s;
-}
-/* Hamburger Animation */
-.hamburger.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-}
-
-.hamburger.active .bar:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-}
-
-/* Mobile Navigation */
-@media screen and (max-width: 768px) {
-    .hamburger {
-        display: block;
-    }
-    
-    .nav-links {
-        position: fixed;
-        top: 70px;
-        left: -100%;
-        width: 100%;
-        background-color: #222;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px 0;
-        transition: 0.3s;
-        z-index: 1000;
-    }
-    
-    .nav-links.active {
-        left: 0;
-    }
-    
-    #theme-toggle {
-        position: absolute;
-        right: 15px;
-        top: 15px;
-    }
-}
+/* Base styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -170,7 +15,20 @@ nav {
     padding: 15px;
     background-color: #222;
     color: white;
+    position: relative;
+    z-index: 1100;
 }
+
+.logo {
+    color: white;
+    font-weight: bold;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
 .nav-links {
     list-style: none;
     display: flex;
@@ -182,34 +40,122 @@ nav {
     text-decoration: none;
 }
 
-.logo img {
-    height: 50px; /* Adjust the height as needed */
-    width: auto; /* Keeps the aspect ratio */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
 }
 
-/* Ensure the logo does not break the layout */
-@media screen and (max-width: 768px) {
-    .logo img {
-        height: 40px; /* Slightly smaller for mobile */
-    }
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: 0.4s;
 }
+
+/* Hamburger animation */
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Sections */
+.section {
+    padding: 50px;
+    text-align: center;
+}
+
+.project-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto 20px auto;
+    text-align: center;
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #ff6600;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #e55b00;
+}
+
+/* Skills */
+.skills-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.skill {
+    background-color: #ddd;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Contact Form */
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+
+form button {
+    background-color: #ff6600;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #222;
+    color: white;
+}
+
 /* Dark Mode */
 .dark-mode {
     background-color: #222;
     color: white;
 }
-.logo {
-    color: white;
-}
 
-.dark-mode .logo {
-    color: white; /* Ensures logo stays visible */
-}
 .dark-mode nav {
     background-color: #333;
 }
 
-.dark-mode .nav-links a {
+.dark-mode .nav-links a,
+.dark-mode .logo {
     color: white;
 }
 
@@ -244,77 +190,95 @@ nav {
     color: white;
 }
 
-/* Sections */
-.section {
-    padding: 50px;
-    text-align: center;
+/* Responsive Design */
+
+/* Mobile Navigation & Hamburger */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: row;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .hamburger {
+        display: flex;
+        order: 1;
+    }
+
+    .logo {
+        order: 3;
+        font-size: 1.5rem;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: #222;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 20px 0;
+        transition: left 0.3s ease;
+        z-index: 1000;
+        overflow-y: auto;
+        margin: 0;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    #theme-toggle {
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        z-index: 1101;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: white;
+        cursor: pointer;
+    }
+
+    .skills-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .project-card {
+        width: 90%;
+        max-width: none;
+    }
+
+    form input, form textarea {
+        width: 90%;
+    }
 }
 
-.project-card {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    max-width: 400px;
-    margin: auto;
-    margin-bottom: 20px;
-}
+/* Smaller screens */
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
 
-.project-image {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
+    .btn {
+        padding: 8px 15px;
+    }
 
-/* Buttons */
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    margin: 10px;
-    background-color: #ff6600;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
+    .skills-container {
+        flex-direction: column;
+        align-items: center;
+    }
 
-.btn:hover {
-    background-color: #e55b00;
-}
-
-/* Skills */
-.skills-container {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.skill {
-    background-color: #ddd;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-/* Contact Form */
-form input, form textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-}
-
-form button {
-    background-color: #ff6600;
-    color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #222;
-    color: white;
+    .project-card {
+        padding: 15px;
+    }
 }
