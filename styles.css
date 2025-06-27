@@ -238,8 +238,8 @@ footer {
 
     #theme-toggle {
         position: fixed;
-        top: 15px;
-        right: 15px;
+        top: 28px;
+        right: 166px;
         z-index: 1101;
         background: none;
         border: none;
